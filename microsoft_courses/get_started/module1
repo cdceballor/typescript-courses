@@ -1,0 +1,27 @@
+Typescript is the superset of Javascript, you can continue using javascript
+but also you can add skills by typescript to improve performance.
+
+The core of typescript is the types, you can identify the data types of a variable or parameters using type hint, with this, you describe the type of the objects and give better documentation.
+
+Typescript gave you the errors in the moment of write code.
+
+Write the type is optional, if typescript can detect the type of the data in a common operation lite let age=42, typescript leave the process and define age variable as a integer, infers the data type.
+
+How it looks like:
+
+    function addNumbers(x:number,y:number){
+        return x + y;
+    }
+    console.log(addNumbers(2,5));
+
+Typescript need to be compiled to works, and when is compiled, is converted to javascript code, basically, you wrote the code in Typescript, later you compile the code and it's converted to javascript code, and the javascript virtual machine (runtime) execute the javascript code.
+
+Generate tsconfig.json:
+Help us to configure our compiler options, this file define the ts compiler settings.
+We can use init option to generate the file:
+
+    tsc --init
+
+Be careful: TypeScript includes code features that are not compatible with browsers.
+    
+

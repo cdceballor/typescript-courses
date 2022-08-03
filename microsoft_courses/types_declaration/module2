@@ -1,0 +1,90 @@
+Typescript allow to add static types to javascript code 
+(functions, properties and variables), when we work with data types,
+this help us in compile time and not in execution time, because 
+typescript create a relationship between the data types and the common
+javascript code in compile time, so, in the moment that we are writing
+code, typescript will create the relationship.
+
+Typescript also works with imperative types (When a variable is obviously
+a specific type), but is better give the type:
+
+    let myVar: number = 1;
+
+When we not define a type in the variable, typescript define the type as an
+any, a specific type that tell us that a variable could be whatever thing
+that works for us, an object, string, number, etc
+
+We have a list of the different types:
+    Primitive types: boolean, string, number, bigInt, enum, void, unknown.
+    Object types: class, interface, matrix, literals.
+    Others (subtypes): not null, undefined. (Works as a subtypes of any others)
+    Any: any.
+    NOTE: you can check the properties of an any value, but not of a unknown value
+
+    Type ascension: when we need to work with a different type variable with other
+Say that typescript has been realized any verification before to call the
+instruction, say to the compiler "Hey, trust me I'm know what I'm doing".
+
+There are 2 ways to:
+    1) Using as (randomValue as string).toUpperCase(); //String random value
+    2) Using angular bracket ((<string>randomValue).toUpperCase())
+
+Check types:
+
+    string  	| typeof s === "string"
+    number  	| typeof n === "number"
+    boolean	    | typeof b === "boolean"
+    undefined	| typeof undefined === "undefined"
+    function	| typeof f === "function"
+    array   	| Array.isArray(a)
+
+Union types: A value that can be one of both (or more) types, It's powerful
+when you don't have control in a value. Looks like |.
+
+    let multiType = number | boolean;
+    multiType = 20;         //* Valid
+    multiType = true;       //* Valid
+    multiType = "twenty";   //* Invalid
+
+Also works with functions:
+
+    function add(x: number | string, y: number | string) {
+    if (typeof x === 'number' && typeof y === 'number') {
+        return x + y;
+    }
+    if (typeof x === 'string' && typeof y === 'string') {
+        return x.concat(y);
+    }
+    throw new Error('Parameters must be numbers or strings');
+    }
+    console.log(add('one', 'two'));  //* Returns "onetwo"
+    console.log(add(1, 2));          //* Returns 3
+    console.log(add('one', 2));      //* Returns error
+
+Intersection type: It's a combination of 2 or more types to create one that
+has all the entities., looks like &.
+
+It's used with interface types.
+
+    interface Employee {
+        employeeID: number;
+        age: number;
+    }
+    interface Manager {
+        stockPlan: boolean;
+    }
+
+    type ManagementEmployee = Employee & Manager;
+    let newManager: ManagementEmployee = {
+        employeeID: 12345,
+        age: 34,
+        stockPlan: true
+    };
+
+Collections types: Object types.
+
+    Matrix: let list : number[] = [1,2,3];
+    Array list: let list: Array<number> = [1, 2, 3];
+
+    Tuple: let person1: [string, number] = ['Marcia', 35]; // ["marcia", 35]
+    Tuple: let person1: [string, number] = ['Marcia', 35, true]; // Error
