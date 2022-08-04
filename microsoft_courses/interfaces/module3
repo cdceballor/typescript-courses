@@ -1,0 +1,58 @@
+The interfaces works as a contract to define a specific type in how to Works
+with different kind of types.
+
+You can use interface to describe an object, assign names to the parameters and
+to compose objects types.
+
+The interface ONLY DESCRIBE A TYPE
+
+    interface Employee {
+    firstName: string; //parameter
+    lastName: string; //parameter
+    fullName(): string; //function
+    }
+
+When you define an interface, you can use that as a type to different variables
+
+    let employee: Employee = {
+        firstName : "Emil",
+        lastName: "Anderson",
+        fullName(): string {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+
+    employee.firstName = 10;  //* Error - Type 'number' is not assignable to type 'string'
+
+Interfaces help us to detect errors in compiler time and not in execution time, because
+we give the parameters that We're gonna use in a specific function and we have the context.
+
+Interface use case:
+    Control the cohesion types.
+    Describe existent Javascript APIs and define the parameters.
+
+Alias (type) vs interface (interface)
+Alias: Definition of a type, for example: union, primitive, intersection, tuple or any other.
+Interface: How to describe the data in shapes, for example: an object.
+
+Principal difference: Alias does not open to add properties, interfaces yes.
+Use PascalCase.
+
+We can handle the properties of the variable:
+Required: All the properties are required, at least, you define the opposite.
+Optional: Using ? -> firstName?: string;
+Read only: using the reserved word readonly -> readonly firstName: string;
+
+You can extend an interface with another or others.
+When you do that: 
+    You must implement all the required properties of the interface.
+    2 interface can have the same properties if have the same name and type.
+    If 2 interfaces have the same name of a properties but different types, you should implement a new property that is a subtype of both.
+
+API AS INTERFACE
+You can use an interface to describe the javascript apis, basically, integrate the interface concept when you consume an api.
+In the return statement you say:
+
+    return body as Post[] //Post is the interface
+
+The main idea of an interface is describe the properties and the types that return an object.
