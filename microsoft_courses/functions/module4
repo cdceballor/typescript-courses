@@ -1,74 +1,74 @@
-Functions in typescript help us to define the numbers of parameters and have the context
-of the number that we're waiting as an argument, for example: Receive 2 parameters as
-numbers and return a number:
+// Functions in typescript help us to define the numbers of parameters and have the context
+// of the number that we're waiting as an argument, for example: Receive 2 parameters as
+// numbers and return a number:
 
-Common function:
-    function addNumbers (x: number, y: number): number {
-       return x + y;
-    }
-    addNumbers(1, 2);
+// Common function:
+//     function addNumbers (x: number, y: number): number {
+//        return x + y;
+//     }
+//     addNumbers(1, 2);
 
-Anon function:
-    let addNumbers = function (x: number, y: number): number {
-        return x + y;
-    }
-    addNumbers(1, 2);
+// Anon function:
+//     let addNumbers = function (x: number, y: number): number {
+//         return x + y;
+//     }
+//     addNumbers(1, 2);
 
-Arrow functions:
-    // Anonymous function
-    let addNumbers1 = function (x: number, y: number): number {
-        return x + y;
-    }
+// Arrow functions:
+//     // Anonymous function
+//     let addNumbers1 = function (x: number, y: number): number {
+//         return x + y;
+//     }
 
-    // Arrow function
-    let addNumbers2 = (x: number, y: number): number => x + y;
+//     // Arrow function
+//     let addNumbers2 = (x: number, y: number): number => x + y;
 
-    // Arrow function example:
-    let total2 = (input: number[]): number => {
-    let total: number =  0;
-    for(let i = 0; i < input.length; i++) {
-        if(isNaN(input[i])) {
-            continue;
-        }
-        total += Number(input[i]);
-    }
-    return total;
-}
+//     // Arrow function example:
+//     let total2 = (input: number[]): number => {
+//     let total: number =  0;
+//     for(let i = 0; i < input.length; i++) {
+//         if(isNaN(input[i])) {
+//             continue;
+//         }
+//         total += Number(input[i]);
+//     }
+//     return total;
+// }
 
-When we create a function, the typescript compiler will try to understand that we pass:
-the parameters required, the type of values in the parameters and the correct order of the parameters
+// When we create a function, the typescript compiler will try to understand that we pass:
+// the parameters required, the type of values in the parameters and the correct order of the parameters
 
-We can pass required parameters, optional parameters and predefined parameters:
+// We can pass required parameters, optional parameters and predefined parameters:
 
-    Required:
-    function addNumbers (x: number, y: number): number {
-        return x + y;
-    }
+//     Required:
+//     function addNumbers (x: number, y: number): number {
+//         return x + y;
+//     }
 
-    addNumbers(1, 2); // Returns 3
-    addNumbers(1);    // Returns an error
+//     addNumbers(1, 2); // Returns 3
+//     addNumbers(1);    // Returns an error
 
-    Optional: Using ?
-    function addNumbers (x: number, y?: number): number {
-        if (y === undefined) {
-            return x;
-        } else {
-            return x + y;
-        }
-    }
+//     Optional: Using ?
+//     function addNumbers (x: number, y?: number): number {
+//         if (y === undefined) {
+//             return x;
+//         } else {
+//             return x + y;
+//         }
+//     }
 
-    addNumbers(1, 2); // Returns 3
-    addNumbers(1);    // Returns 1
+//     addNumbers(1, 2); // Returns 3
+//     addNumbers(1);    // Returns 1
 
-    Predefined parameters:
-    function addNumbers (x: number, y = 25): number {
-        return x + y;
-    }
+//     Predefined parameters:
+//     function addNumbers (x: number, y = 25): number {
+//         return x + y;
+//     }
 
-    addNumbers(1, 2);  // Returns 3
-    addNumbers(1);     // Returns 26
+//     addNumbers(1, 2);  // Returns 3
+//     addNumbers(1);     // Returns 26
 
-    We also can pass parameter values in a destructuring way
+//     We also can pass parameter values in a destructuring way
 
-NOTE: Use interface if we want to extend, and use alias if we want to works
-with tuples or unions
+// NOTE: Use interface if we want to extend, and use alias if we want to works
+// with tuples or unions

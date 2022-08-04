@@ -23,5 +23,5 @@ We can use init option to generate the file:
     tsc --init
 
 Be careful: TypeScript includes code features that are not compatible with browsers.
-    
+
 
