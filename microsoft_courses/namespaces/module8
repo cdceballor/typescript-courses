@@ -17,3 +17,7 @@ namespace B {
 let var1= A.functionName(); //OK
 let var2= B.functionName(); //OK
 let var3= functionName(); //ERROR
+
+To define as a compatible component we need to export it to create a communication and management it.
+
+--outfile say to the compile that only generate a single file.
