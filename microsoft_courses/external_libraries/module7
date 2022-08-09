@@ -1,0 +1,23 @@
+// The code is inside of modules, and with the modules we can export and
+// import functionalities by this modules that we create.
+
+// Exporting a function:
+// export function returnGreeting (greeting: string) {
+//     console.log(`The message from Greetings_module is ${greeting}.`);
+// }
+
+// export function returnGreeting (greeting: string) {
+//     let greetingLength = getLength(greeting);
+//     console.log(`The message from GreetingsLength_module is ${greeting}. It is ${greetingLength} characters long.`);
+// }
+// function getLength(message: string): number {
+//     return message.length
+// }
+
+// Importing the modules:
+// import { <component name> } from '<module name>'
+// import { <component name> as <new name> } from '<module name>'
+// import * as <variable name> from '<module name>'
+
+// Also, we can export and import external libraries using
+// the reserved word require as javascript
