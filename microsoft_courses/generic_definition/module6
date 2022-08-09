@@ -1,0 +1,35 @@
+The generics are templates that can be used in whole code.
+
+It's help us when we need to work with different types and
+we don't want to use the any as type
+
+Use of a function without generic:
+function getArray(items : any[]) : any[] {
+    return new Array().concat(items);
+}
+
+Use a function with generic:
+function getArray<T>(items : T[]) : T[] {
+    return new Array<T>().concat(items);
+}
+
+Generic help us to reduce the boilerplate when we write code, if we need
+work with number and string in a same function, we create only one function
+and specified the type with the generic type <T> (We can use whatever name of
+variable changing the T for a, b, etc)
+
+We can extend tha values depending of what we need, for example, if we need to
+specify a type, we can create a type and later extend it in the keys function
+definition (line 27)
+
+type ValidTypes = string | number;
+
+function identity<T extends ValidTypes, U> (value: T, message: U) : T {
+    let result: T = value + value;    // Error
+    console.log(message);
+    return result
+}
+
+let returnNumber = identity<number, string>(100, 'Hello!');      // OK
+let returnString = identity<string, string>('100', 'Hola!');     // OK
+let returnBoolean = identity<boolean, string>(true, 'Bonjour!'); // Error: Type 'boolean' does not satisfy the constraint 'ValidTypes'.
