@@ -1,0 +1,19 @@
+Namespaces is similar with the import/export
+because help us to share functionalities in the global scope but in specifics places of the functions.
+
+If we have 2 namespaces A and B, and we try to entry to the functions that are inside of this namespaces, this gonna give us an error because we need to do reference to the namespaces to can access.
+
+namespace A {
+ export function functionName{
+    ...
+ }
+}
+namespace B {
+ export function functionName{
+    ...
+ }
+}
+
+let var1= A.functionName(); //OK
+let var2= B.functionName(); //OK
+let var3= functionName(); //ERROR
