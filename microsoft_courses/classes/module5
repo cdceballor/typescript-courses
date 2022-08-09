@@ -1,0 +1,20 @@
+With classes you can use common patterns by OOP, we have the same classes
+components like: Constructor, the access pointers (get and set), and the methods.
+
+We have also access alter:
+Public to all the public methods and value, we can access by whatever other class,
+private to define a method and value, we can't access, only the constructor,
+protected works only with the methods or values that are inside of the class or subclasses,
+the same thing that OOP.
+
+We have the inheritance concept to extend a class with other, in the same way that Java.
+
+We can implement an interface as a data structure or contract of values with required
+fields and optional fields.
+
+Interface vs Classes
+The interfaces only are contact that we define of what gonna do, the classes give us more
+information about how and where gonna do something and in the classes we need to create a
+constructor to consume the data.
+
+NOTE: We only must include one constructor function in the class definition.
