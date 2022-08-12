@@ -1,32 +1,35 @@
-import React, { useState } from 'react'
-import { FormState, Sub } from '../interfaces/Interfaces';
-
-const initialState = {
-    nick: "",
-    subMonths: 0,
-    avatar: "",
-    description: "",
-}
-
+import React, { useReducer } from 'react'
+import { initialState } from '../consts/conts';
+import { Sub } from '../interfaces/Interfaces';
+import FormReducer from '../reducer/FormReducer';
 interface FormProps{
     onNewSub: (newSub:Sub) => void;
 }
 const Form=({onNewSub}:FormProps) =>{
 
-    const [inputValues, setInputValues] = useState<FormState["newSubs"]>(initialState);
+    // const [inputValues, setInputValues] = useState<FormState["newSubs"]>(initialState);
+    const [inputValues, dispatch] = useReducer(FormReducer, initialState);
 
-    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onNewSub(inputValues);
-
+        handleClear();
     }
     const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setInputValues({
-            ...inputValues,
-            [e.target.name]: e.target.value
+        const { name, value } = e.target;
+        dispatch({
+            type: "change_value",
+            payload: {
+                inputName: name,
+                inputValue: value
+            }
         })
     }
-    
+
+    const handleClear = () => {
+        dispatch({ type: "clear" });
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>

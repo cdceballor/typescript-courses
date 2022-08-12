@@ -8,7 +8,19 @@ export interface Sub{
 export interface AppState{
     subs: Sub[];
   }
-  
+
   export interface FormState{
   newSubs: Sub;
 }
+
+export type FormReducerAction={
+  type: "change_value",
+  payload: {
+    inputName: string
+    inputValue: string
+  }
+} | {
+  type: "clear"
+}
+
+export type FetchPeople = Array<Sub>
